@@ -1,7 +1,13 @@
 #include <stdio.h>
 
-int main()
+#include "argument_check.h"
+#include "operation_execution.h"
+
+int main(int nagrs,char **args)
 {
-	printf("Hello world");
+	if(checkForCorrectArguments(nagrs,args))
+	{
+		performOperationBasedOnMode(args);
+	}
 	return 0;
 }
