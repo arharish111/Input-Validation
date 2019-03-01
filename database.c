@@ -13,28 +13,28 @@ int checkForDatabaseConnectionAndCreateTable()
 
    if( result ) 
    {
-		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+		printf("Can't open database: %s\n", sqlite3_errmsg(db));
 		return 0;
    } 
    else 
    {
-		fprintf(stderr, "Opened database successfully\n");
-   
-    	char *sql = "CREATE TABLE IF NOT EXISTS COMPANY("  \
-      "NUMBER TEXT PRIMARY KEY     NOT NULL," \
-      "NAME           TEXT    NOT NULL);";
+		printf("Opened database successfully\n");
+
+		char *sql = "CREATE TABLE IF NOT EXISTS COMPANY("  \
+	  "NUMBER TEXT PRIMARY KEY     NOT NULL," \
+	  "NAME           TEXT    NOT NULL);";
 		
-		result = sqlite3_exec(db, sql, callback, 0, &errorMessage);
+	  result = sqlite3_exec(db, sql, callback, 0, &errorMessage);
 	   
-	   if( result != SQLITE_OK )
+	   if(result != SQLITE_OK)
 	   {
-		  fprintf(stderr, "SQL error: %s\n", errorMessage);
+		  printf("SQL error: %s\n", errorMessage);
 		  sqlite3_free(errorMessage);
 		  return 0;
 	   } 
 	   else 
 	   {
-		  fprintf(stdout, "Table created successfully\n");
+		  printf("Table created successfully\n");
 	   }
 	   sqlite3_close(db);
 	   return 1;
