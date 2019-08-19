@@ -2,7 +2,7 @@ CC=	gcc
 LIBRARIES= -lpthread -ldl
 
 all:Input_validation_main.o argument_check.o operation_execution.o database.o validation.o
-	$(CC) -o inputval Input_validation_main.o argument_check.o operation_execution.o database.o validation.o sqlite3.c $(LIBRARIES)
+	$(CC) -o inputvalidation Input_validation_main.o argument_check.o operation_execution.o database.o validation.o sqlite3.c $(LIBRARIES)
 
 Input_validation_main.o:Input_validation_main.c
 	$(CC) -c Input_validation_main.c

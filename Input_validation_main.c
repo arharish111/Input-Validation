@@ -7,7 +7,11 @@ int main(int nagrs,char **args)
 {
 	if(checkForCorrectArguments(nagrs,args))
 	{
-		performOperationBasedOnMode(args);
+		if(performOperationBasedOnMode(args))
+		return 0;
+		else
+		return 1;
 	}
-	return 0;
+	else
+	return 1;
 }
