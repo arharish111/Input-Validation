@@ -1,3 +1,3 @@
 # Input-Validation
 Secure programming assignment.
-Input validation using whitelist regex experession and performing CRUD operations on the accepted input data in sqlite database.
+Input validation using whitelist regex expression and performing CRUD operations on the accepted input data using sqlite database.
